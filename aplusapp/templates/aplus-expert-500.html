@@ -1,0 +1,55 @@
+{% extends "aplus-expert-base.html" %} 
+{% load static %} 
+
+{% block content %}
+<!-- Inner Page Main Banner __________________ -->
+<div class="inner-page-banner">
+	<div class="opacity">
+		<div class="container">
+			<h2>500</h2>
+		</div>
+		<!-- /.container -->
+	</div>
+	<!-- /.opacity -->
+</div>
+<!-- /.inner-page-banner -->
+
+
+<!-- Page Breadcrum __________________________ -->
+<div class="page-breadcrum">
+	<div class="container">
+		<ul>
+			<li>
+				<a href="/home/">Home</a>
+			</li>
+			<li>-</li>
+			<li>Error</li>
+		</ul>
+	</div>
+	<!-- /.container -->
+</div>
+<!-- /.page-breadcrum -->
+
+
+<!-- Error Page _________________________ -->
+<div class="error-page">
+	<div class="container">
+		<div class="error-wrapper clear-fix">
+			<img src="{% static "images/inner-page/aplus-error-404.jpg" %}" alt="" class="float-left wow fadeInLeft">
+			<div class="text float-right wow fadeInRight">
+				<h2>500
+					<span class="p-color opps">opps!</span>
+					<span class="last p-color">ERROR!</span>
+				</h2>
+				<p>The requested operation could not be completed.</p>
+				<a href="/home/" class="tran3s">
+					<i class="fa fa-long-arrow-left" aria-hidden="true"></i> GO BACK HOME</a>
+			</div>
+			<!-- /.text -->
+		</div>
+		<!-- /.error-wrapper -->
+	</div>
+	<!-- /.container -->
+</div>
+<!-- /.error-page -->
+{% endblock %}

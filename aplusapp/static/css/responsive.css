@@ -1,0 +1,237 @@
+/* Responsive CSS Document */
+
+/* 
+    Created on : 07/09/2016. 
+    Theme Name : Edutech.
+    Description: Edutech- Responsive html5 template.
+    Version    : 1.0.
+    Author     : @TheMazine.
+   
+*/
+
+
+
+@media (min-width: 992px) {
+	.container {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+}
+@media (max-width: 1366px) {
+    .scroll-top {bottom: 30px; right:30px;}
+}
+@media (max-width: 1199px) {
+    header .top-header div.right-side,header .top-header div.left-side {float: none; text-align: center;}
+    header .top-header div.left-side>ul>li {margin-bottom: 10px;}
+    .theme-manage-area .item2 {display: none;}
+    .theme-manage-area .item1 {width:50%;}
+    .faq .wrapper {padding-left: 0;}
+    .faq.float-left .wrapper {padding-right: 0;}
+    footer .top-footer .footer-about {padding-right: 15px;}
+    footer .top-footer .footer-contact,footer .footer-quick-link {padding-left: 15px;}
+    footer .top-footer [class*="col-"] {margin-bottom: 50px;}
+    footer .bottom-footer {margin-top: 45px;}
+    .sidebarOne .wrapper,.sidebarOne .wrapper-left {padding: 0;}
+}
+/*(max-width: 1199px)*/
+
+@media (max-width: 991px) {
+   .navbar-collapse.collapse,.main-menu-wrapper .nav>li>a:before {display: none !important;}
+   .navbar-collapse {box-shadow: none;}
+   .navbar-collapse.collapse.in,.navbar-toggle,.main-menu-wrapper .nav>li.dropdown-holder .fa {display: block !important;}
+   .main-menu-wrapper {margin-right: -15px;margin-left: -15px;}
+   .main-menu-wrapper .logo {position: absolute; top:0; left:15px;z-index: 9;}
+   .main-menu-wrapper.fixed .logo {left:15px;}
+   .main-menu-wrapper form {position: absolute;left:50%;top:30px;margin: 0 0 0 -112px; z-index: 9;}
+   .navbar,.navbar-nav {float:none;}
+   .navbar-header {float:none;}
+   .main-menu-wrapper .nav>li {float:none; margin: 0;}
+   .main-menu-wrapper .nav>li>a {line-height: 40px;padding-left: 15px;border-bottom:1px solid #fff;}
+   .main-menu-wrapper .nav>li:last-child>a {border:none;}
+   .navbar-collapse,.navbar-collapse.collapse.in {padding: 15px;}
+   .navbar-nav {border:1px dashed #fff;}
+   .main-menu-wrapper .nav>li.dropdown-holder .sub-menu li a {padding-left: 35px;}
+   .main-menu-wrapper .nav>li.dropdown-holder .sub-menu li a:before {background:#333333;}
+   .main-menu-wrapper.fixed {max-height: 100%;overflow-y:auto;}
+   .main-menu-wrapper .nav>li.dropdown-holder .sub-menu {
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    position: static;
+    width: 100%;
+    -webkit-transition: none;
+       -moz-transition: none;
+        -ms-transition: none;
+         -o-transition: none;
+            transition: none;
+    -webkit-transform: scaleY(1);
+       -moz-transform: scaleY(1);
+        -ms-transform: scaleY(1);
+         -o-transform: scaleY(1);
+            transform: scaleY(1);
+   }
+   .section-title p {width:100%;}
+   .welcome-section-two .row p {margin: left:0; margin-right: 0;}
+   .sidebarOne,.teacher-profile .teacher-sidebar .img-holder {margin-top: 50px;}
+   .teacher-profile .text-warpper,.contact-us-page .contactUs-address {padding-left: 0;}
+   .error-page .error-wrapper img,.error-page .error-wrapper .text {float:none;}
+   .error-page .error-wrapper .text {text-align: center;}
+   .contact-us-page .contactUs-address {margin-top: 80px;}
+}
+/*(max-width: 991px)*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .main-menu-wrapper form { margin: 30px 10px 0 10px;}
+    .main-menu-wrapper .nav>li {margin:0 12px;}
+    .welcome-section .row h3 {font-size: 19px;}
+    .popular-course .course-item-wrapper .text>div.clear-fix {padding-right: 0;}
+    .popular-course .course-item-wrapper .text>div ul li {margin-right: 0;}
+    .popular-course .course-item-wrapper .text p {padding: 22px 10px;}
+    .event-section .single-event {padding-left: 84px;}
+    .event-section .single-event .date {left:4px;}
+    .information-banner h3 {font-size: 21px;}
+    .subscribe-banner form {width:60%;}
+    .inner-page-banner .opacity {padding-top: 290px;}
+    .sidebarOne .sidebar-box .box-wrapper {padding-left: 10px;}
+    .event-details-page .event-details-content .sub-text #google-map {width:50%;}
+    .course-v2 .single-course .img-holder {width:72%;}
+    .course-v2 .single-course .text p {padding-bottom: 10px;}
+    .course-details-page .course-details-content .sub-text ul.st-requirements-list li {float:none; width:100%;}
+    .course-details-page .course-details-content .course-instructor .single-box-content .item {width: 50%;margin-bottom: 20px;}
+    .course-details-page .course-details-content .sub-text.course-curriculum {padding-right: 25px;}
+    .course-details-page .course-details-content .course-curriculum .course-curriculum-panel .panel-heading tr td:nth-child(1) {width:58%;}
+    .course-details-page .course-details-content .course-curriculum .course-curriculum-panel .panel-heading tr td span {margin-left: 10px;}
+    .teacher-profile .teacher-sidebar .teachers-bio p,.teacher-profile .teacher-sidebar .teachers-bio ul {padding-left: 30px;}
+    .teacher-profile .text-warpper .row ul {margin-bottom: 40px;}
+    .error-page .error-wrapper {padding: 0;}
+}
+/*(min-width: 992px) and (max-width: 1199px)*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+    header .top-header div.left-side>ul>li {width:50%; margin-right: 0; float:left;}
+    header .top-header div.left-side {text-align: left;}
+    header .top-header div.left-side>ul>li:nth-child(2),
+    header .top-header div.left-side>ul>li:nth-child(4) {text-align: right;}
+    .course-search-option .input-one {width:35%;}
+    .course-search-option .input-three {width:19%;}
+    .course-search-option .input-two {width:23%;}
+    .subscribe-banner form {width:81%;}
+    .inner-page-banner .opacity {padding-top: 310px;}
+    .event-details-page .event-details-content .sub-text #google-map {width:55%;}
+    .course-v2 .single-course .img-holder {width:70%;}
+    .course-details-page .course-details-content .sub-text.course-curriculum {padding-right: 20px;}
+    .error-page .error-wrapper h2 span.opps {left:auto; right:27%;}
+}
+/*(min-width: 768px) and (max-width: 991px)*/
+
+@media (max-width: 767px) {
+    .main-menu-wrapper .logo img {width:60%;}
+    .navbar-toggle {margin: 13px 0;}
+    .main-menu-wrapper form {top:10px;}
+    .theme-manage-area .item1,.course-details-page .course-details-content .sub-text ul.st-requirements-list li {width: 100%;}
+    .course-search-option .input-one,.course-search-option .input-two,.course-search-option .input-three {width:50%; margin-bottom: 20px;}
+    .popular-course .course-item-wrapper .text>div ul { text-align: left;}
+    .popular-course .course-item-wrapper .text>div ul li {display: block; border:none;}
+    .popular-course .course-item-wrapper .text>div a {float:right;}
+    .popular-course .course-item-wrapper .text p {padding-left: 10px;padding-right: 10px;}
+    .subscribe-banner form {width:100%;}
+    .subscribe-banner input {width:90%; margin: 0 auto; display: block; float:none;}
+    .subscribe-banner button {margin: 20px auto 0 auto; display: block; float:none;}
+    header {position: relative;background: #cd2122;}
+    .inner-page-banner .opacity {padding-top: 90px;}
+    .event-details-page .event-details-content .sub-text .table-fix {width: 100%; margin-bottom: 40px;}
+    .event-details-page .event-details-content .sub-text #google-map {width: 94%; margin-right: 3%;}
+    .course-v2 .single-course .img-holder,.course-v2 .single-course .img-holder img,.course-v2 .single-course .text {width:100%; float:none;}
+    .course-v2 .single-course .course-heading {margin-top: 30px;}
+    .course-v2 .single-course .course-heading,.course-v2 .single-course>p {padding-left: 20px;}
+    .course-details-page .course-details-content .sub-text,.course-details-page .course-details-content .sub-text.course-curriculum {padding-left: 10px;padding-right: 10px;}
+    .course-details-page .course-details-content h3,.course-details-page .course-details-content ul.post-info {padding-left: 10px;}
+    .course-details-page .course-details-content .course-instructor .single-box-content .item {width: 100%;margin-bottom: 10px;}
+    .course-details-page .course-details-content .course-instructor .item ul.contact-list {text-align: center;}
+    .course-details-page .course-details-content .course-curriculum .course-curriculum-panel .panel-heading tr td {width:33.33333% !important;}
+    .course-details-page .course-details-content .course-curriculum .course-curriculum-panel .panel-heading tr td>div {margin: 0;float:right;}
+    .course-details-page .course-details-content .course-curriculum .course-curriculum-panel .panel-heading tr td span {margin:0;}
+    .teacher-profile .text-warpper .row ul {margin-bottom: 40px;}
+    .error-page .error-wrapper {padding: 0;}
+    .error-page .error-wrapper img {margin: 0 auto;}
+    .error-page .error-wrapper h2 span.opps {position: static;}
+    #banner h1 {font-size: 30px;line-height: 40px;}
+    #banner h5 {font-size: 14px;}
+}
+/*(max-width: 767px)*/
+
+@media (max-width: 650px) {
+    .popular-course .course-item-wrapper .item .img-holder img,.course-page-single .popular-course .course-item-wrapper img {margin: 0 auto;}
+    .owl-theme .owl-dots {display: none !important;}
+    .our-certification .item img {margin: 0 auto;}
+    .latest-event-slider .item>img,.course-page-single .popular-course .course-item-wrapper [class*="col-"] {width:100%;}
+    .contact-us-form #success,
+    .contact-us-form #error {
+      width: 84%;
+      height: auto;
+      top: 50%;
+      margin-top: -50px;
+      margin-left: 0;
+      left: 8%;
+      padding: 30px 10px;
+    }
+}
+
+@media (max-width: 600px) {
+   .latest-news .single-post,.latest-news .img-holder img {width:100%;}
+   .blog-details-page .blog-details-page-content .main-post-content,
+   .blog-details-page .blog-details-page-content ul.post-info {padding-left: 20px;padding-right: 20px;}
+}
+
+@media (max-width: 500px) {
+   .blog-details-page .blog-details-page-content .main-post-content .admin-text,
+   .blog-details-page .blog-details-page-content .main-post-content .single-comment {padding-left: 20px;}
+   .blog-details-page .blog-details-page-content .main-post-content .admin-text .img-content,
+   .blog-details-page .blog-details-page-content .main-post-content .single-comment .img-content,
+   .blog-details-page .blog-details-page-content .main-post-content .admin-text ul.share-icon {position: static; text-align: center;}
+   .blog-details-page .blog-details-page-content .main-post-content .admin-text .img-content img,
+   .blog-details-page .blog-details-page-content .main-post-content .single-comment .img-content img {margin: 0 auto;}
+   .blog-details-page .blog-details-page-content .main-post-content .admin-text .img-content h6,
+   .blog-details-page .blog-details-page-content .main-post-content .single-comment .img-content p {margin-bottom: 10px;}
+   .blog-details-page .blog-details-page-content .main-post-content .single-comment.reply-comment {margin-left: 30px;}
+   .blog-details-page .blog-details-page-content .main-post-content .single-comment {margin-left: 12px;}
+   .blog-details-page .blog-details-page-content .main-post-content .admin-text p {margin-top: 10px;}
+   .hermes.tparrows:hover .tp-arr-allwrapper {display: none !important;}
+   .contact-us-page .contact-us-form input, .contact-us-page .contact-us-form textarea {padding: 0 10px;}
+   #banner h1{font-size: 20px;}
+   #banner h5 {font-size: 12px;}
+}
+
+@media (max-width: 480px) {
+   .main-menu-wrapper .logo {top:60px;left:15px;}
+   .main-menu-wrapper form {position: relative;width:100%;margin: 0 0 20px 0;left:auto;}
+   .navbar-collapse,.navbar-collapse.collapse.in {padding-left: 0;padding-right: 0;}
+   .main-menu-wrapper.fixed form,header .top-header div.right-side {display: none;}
+   .main-menu-wrapper.fixed .logo {top:0;}
+   .scroll-top {right:5px; bottom: 15px;}
+   .course-v2 .single-course .course-heading ul li {display: block;margin: 0 0 5px 0;}
+}
+
+@media (max-width: 450px) {
+   header .top-header div.left-side>ul>li {width:100%;float:left;text-align: left;}
+   
+}
+
+@media (max-width: 380px) {
+    .course-progress .col-xs-6,.course-search-option .input-one,footer .top-footer .footer-contact ul li,
+    .course-search-option .input-two, .course-search-option .input-three,.contact-us-page .contactUs-address ul li {width:100%;}
+    .test-faq .testimonial .single-box .img {left:5px;}
+    .test-faq .testimonial .single-box {padding-left: 78px;}
+    .test-faq .testimonial .single-box h6 span {display: block;margin: 5px 0 0 0;}
+    .event-section .single-event .date {left:8px; padding-right: 15px;}
+    .event-section .single-event {padding-left: 88px;}
+    .event-details-page .event-details-content .sub-text h6,.blog-details-page .blog-details-page-content .main-post-content .share-option h6 {margin-top: 30px;}
+    .event-details-page .event-details-content .sub-text {padding-left: 5px;}
+    .sidebarOne .sidebar-box .box-wrapper {padding-left: 10px;}
+    .sidebarOne .feature-event .post {width:76%;}
+    .teacher-profile .teacher-sidebar .teachers-bio p,.teacher-profile .teacher-sidebar .teachers-bio ul {padding-left: 20px;}
+    .faq .faq_panel .panel-group .panel-heading a,.faq .faq_panel .panel-group .panel-heading + .panel-collapse > .panel-body {padding-left: 40px;}
+    .faq .faq_panel .panel-group .panel-heading a:before {left:10px; line-height: 0;top:50%;}
+    .error-page .error-wrapper h2 {font-size: 70px;line-height: 45px;}
+    .error-page .error-wrapper p {margin-top: 20px;}
+}

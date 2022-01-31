@@ -1,0 +1,138 @@
+ {% extends "aplus-expert-base.html" %} 
+ {% load static %} 
+ 
+ {% block content %}
+<!-- Inner Page Main Banner __________________ -->
+<div class="inner-page-banner">
+	<div class="opacity">
+		<div class="container">
+			<h2>Free Consultation</h2>
+		</div>
+		<!-- /.container -->
+	</div>
+	<!-- /.opacity -->
+</div>
+<!-- /.inner-page-banner -->
+
+
+<!-- Page Breadcrum __________________________ -->
+<div class="page-breadcrum">
+	<div class="container">
+		<ul>
+			<li>
+				<a href="/home/">Home</a>
+			</li>
+			<li>-</li>
+			<li>Free Consultation</li>
+		</ul>
+	</div>
+	<!-- /.container -->
+</div>
+<!-- /.page-breadcrum -->
+
+<!-- Contact Us Form _____________________ -->
+<div class="contact-us-page" style="margin-bottom: 90px;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 wow fadeInLeft" style="margin-bottom: 60px;">
+				<div class="contact-us-form">
+					<h2>Sign up for a free consultation!</h2>
+					<p style="margin-top: 10px;">At A+ Expert, we believe in creating effective personalized educational courses for our students and that starts with
+						a completely free consulting session where we sit down with our students to discuss their goals, grades and learning
+						style. We then craft a plan for our students to achieve their goals effectively and succeed in school.</p>
+					<form action="/complete-request/" method="POST" class="form-validation" autocomplete="on">
+						{% csrf_token %}
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<input name="name" type="text" placeholder="Name" required maxlength="250">
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<input name="email" type="email" placeholder="Email" required maxlength="250">
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<input name="phone" type="text" placeholder="Phone Number" maxlength="17">
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<input name="school" type="text" placeholder="School" maxlength="250">
+							</div>
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<input name="address" type="text" placeholder="Address" maxlength="350">
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<input name="subjects" type="text" placeholder="Priority Subject Areas" maxlength="350">
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<input name="grade" type="text" placeholder="School Grade" maxlength="50">
+							</div>
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<p style="margin-bottom: 5px;">Please specify any additional details or preferences. These could include your goals, marks, preferred learning styles
+									and location of preference for tutoring sessions.</p>
+								<textarea name="details" placeholder="" maxlength="5000"></textarea>
+								<button name="request-free-consultation" class="tran3s p-color-bg themehover" title="Send">send message</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- /.contact-us-form -->
+			</div>
+			<!-- /.col- -->
+
+			<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 wow fadeInRight">
+				<!-- course Progress -->
+				<div class="team-stats">
+					<div class="opacity">
+						<h2>Advise with
+							<span class="p-color">Experts</span>
+						</h2>
+						<p>Our tutors are high-achieving engineering and science students with a history of educational excellence.</p>
+
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+								<div class="icon">
+									<i class="ficon flaticon-crowdfunding"></i>
+								</div>
+								<p>Years of Experience</p>
+								<div class="number">
+									<span class="timer" data-from="0" data-to="5" data-speed="1500" data-refresh-interval="5">0</span>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+								<div class="icon">
+									<i class="ficon flaticon-teamwork"></i>
+								</div>
+								<p>Hours of Tutoring</p>
+								<div class="number">
+									<span class="timer" data-from="0" data-to="3500" data-speed="1500" data-refresh-interval="5">0</span>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+								<div class="icon">
+									<i class="ficon flaticon-medical"></i>
+								</div>
+								<p>Students Taught</p>
+								<div class="number">
+									<span class="timer" data-from="0" data-to="180" data-speed="1500" data-refresh-interval="5">0</span>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+								<div class="icon">
+									<i class="ficon flaticon-book"></i>
+								</div>
+								<p>Student Satisfaction</p>
+								<div class="number">
+									<span class="timer" data-from="0" data-to="100" data-speed="1500" data-refresh-interval="5">0</span>%</div>
+							</div>
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.opacity -->
+				</div>
+				<!-- /.course-progress -->
+			</div>
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container -->
+</div>
+<!-- /.contact-us-page -->
+{% endblock %}

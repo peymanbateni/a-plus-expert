@@ -1,0 +1,72 @@
+{% extends "aplus-dashboard-base.html" %} {% load static %} {% block content %}
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <h1>
+            <strong>
+                <center>Profit Calculator</center>
+            </strong>
+        </h1>
+        <center>
+            <p>Use the form below to calculate weekly profits.
+                <b>Note that both the start date and the end date will be included in the calculations.</b>
+            </p>
+        </center>
+
+        <div class="box_general padding_bottom">
+            <div class="header_box version_2">
+                <h2>
+                    <i class="fa fa-file-text"></i>Profit Calculator</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Start Date</label>
+                                        <input type="date" name="start_date" id="id_date" value="yyyy-mm-dd" class="form-control" required/>
+                                        {% if profit_form.start_date.errors %}
+                                        <div style="color: #ed1c24;">Invalid date. Please make sure you enter the date in yyyy-mm-dd format.</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>End Date</label>
+                                        <input type="date" name="end_date" id="id_date" value="yyyy-mm-dd" class="form-control" required/>
+                                        {% if profit_form.end_date.errors %}
+                                        <div style="color: #ed1c24;">Invalid date. Please make sure you enter the date in yyyy-mm-dd format.</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <p style="margin-bottom: 0px;">
+                                <input type="submit" name="profit_calculate" class="btn_1 medium" value="Calculate">
+                            </p>
+                        </div>
+                        {% if amount %}
+                        <hr>
+                        <div class="form-group">
+                            <h1>Profits: {{ amount }}</h1>
+                        </div>
+                        {% elif amount == 0 %} 
+                        <hr>
+                        <div class="form-group">
+                            <h1>No Profits</h1>
+                        </div>
+                        {% endif %}
+                        {% for payment in payment_list %}
+                        <div class="form-group">
+                            <h4>{{ payment.tutor_name }}: {{ payment.amount }}</h4>
+                        </div>
+                        {% endfor %}
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /box_general-->
+        {% endblock %}

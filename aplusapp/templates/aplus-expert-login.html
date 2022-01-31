@@ -1,0 +1,66 @@
+{% extends "aplus-expert-base.html" %} 
+{% load static %} 
+
+{% block content %}
+<!-- Inner Page Main Banner __________________ -->
+<div class="inner-page-banner">
+	<div class="opacity">
+		<div class="container">
+			<h2>{{ title }}</h2>
+		</div>
+		<!-- /.container -->
+	</div>
+	<!-- /.opacity -->
+</div>
+<!-- /.inner-page-banner -->
+
+<!-- Page Breadcrum __________________________ -->
+<div class="page-breadcrum">
+	<div class="container">
+		<ul>
+			<li>
+				<a href="/home/">Home</a>
+			</li>
+			<li>-</li>
+			<li>Login</li>
+		</ul>
+	</div>
+	<!-- /.container -->
+</div>
+<!-- /.page-breadcrum -->
+
+<!-- Error Page -->
+<div class="error-page">
+	<div class="container">
+		<div class="error-wrapper clear-fix">
+			<h1 style="margin-bottom: 40px;">
+				{% if user.is_authenticated %}
+				<span class="p-color">Sign into a different account :)</span>
+				{% else %}
+				<span class="p-color">Welcome to A+ Dashboard!</span>
+				{% endif %}
+			</h1>
+			<form method="post">
+				{% if form.errors %}
+				<p class="errorlist" style="color: #ed1c24;">
+					Your username and password didn't match. 
+					Please try again.</p>
+				{% endif %}									
+				{% csrf_token %}
+				<div class="form-group">
+					<input style="max-width: 600px;" type="email" name="username" autofocus maxlength="254" required id="id_username" class="form-control" placeholder="Email Address"/>
+				</div>
+				<div class="form-group">
+					<input style="max-width: 600px;" type="password" name="password" required id="id_password" class="form-control" placeholder="Password"/>
+				</div>
+				<div class="form-group">
+					<button class="special-button" type="submit" style="margin-top: 20px;">Login</button>
+				</div>
+			</form>
+			<a style="margin-bottom: -40px;" href="/password_reset/">Forgot password?</a>
+		</div>
+	</div>
+	<!-- /.container -->
+</div>
+<!-- /.error-page -->
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "aplus-dashboard-base.html" %} {% load static %} {% block content %}
+<div class="content-wrapper">
+    <div class="container-fluid">
+
+        <div class="box_general padding_bottom">
+            <div class="header_box version_2">
+                <h2>
+                    <i class="fa fa-bookmark"></i>Student Overview</h2>
+            </div>
+            <h1 class='text-center' style="margin-bottom: 50px;">Student Stats in Realtime!</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <table id="pricing-list-container2" style="width:100%;">
+                        <div class="row">
+                            {% for student in students %}
+                            <div class="col-md-6">
+                                <h3 class="exec-dash">{{ student.first_name }} {{ student.last_name}}</h3>
+                                <h5>Total hours left: {{ student.sessional_hours }}</h5>
+                                <h5>Hours this month: {{ student.hours_of_tutoring_used_this_month }}</h5>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </table>
+                </div>
+            </div>
+            <!-- /row-->
+        </div>
+        {% endblock %}

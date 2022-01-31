@@ -1,0 +1,112 @@
+{% extends "aplus-dashboard-base.html" %} {% load static %} {% block content %}
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <h1>
+            <strong>
+                <center>Email a Receipt in One Click</center>
+            </strong>
+        </h1>
+        <center>
+            <p>Use the form below to send an official receipt to our clients.
+                <b>It's important that you do this right after you receive a check or an e-transfer.</b>
+            </p>
+        </center>
+
+        <div class="box_general padding_bottom">
+            <div class="header_box version_2">
+                <h2>
+                    <i class="fa fa-mail-forward"></i>Email a Receipt</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form method="POST">
+                        {% if ReportMessage == "Success" %}
+                            <div class="form-group"><div style="color: #03ad0b;">Report was submitted successfully. An email copy is on its way!</div></div>
+                        {% endif %}
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" name="name" id="id_name" maxlength="250" class="form-control" required/>
+                                        {% if receipt_form.name.errors %}
+                                        <div style="color: #ed1c24;">Name cannot be empty or more than 250 characters.</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" name="email" id="id_email" class="form-control" required>
+                                        {% if receipt_form.email.errors %}
+                                        <div style="color: #ed1c24;">Please enter a valid email.</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>Amount</label>
+                                        <input type="number" name="amount" id="id_amount" min="0" class="form-control" step="0.50" required>
+                                        {% if receipt_form.amount.errors %}
+                                        <div style="color: #ed1c24;">Please enter a valid none-zero amount.</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <input type="date" name="date" id="id_date" value="yyyy-mm-dd" class="form-control" required/>
+                                        {% if report_form.date.errors %}
+                                        <div style="color: #ed1c24;">Date could not be logged in. Please make sure you enter the date in yyyy-mm-dd format.</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <p style="margin-bottom: 0px;">
+                                <input type="submit" name="send_receipt" class="btn_1 medium" value="Email Receipt">
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {% if receipts %}
+            <hr>
+            {% for receipt in receipts %}
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-md-12">
+                    <form>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" name="name" id="id_name" value="{{ receipt.name }}" maxlength="250" class="form-control" readonly/>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="email" name="email" id="id_email" value="{{ receipt.email }}" class="form-control" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input type="text" name="amount" id="id_amount" min="0" value="{{ receipt.amount }}" class="form-control" step="0.50" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input type="text" name="date" id="id_date" min="0" value="{{ receipt.date }}" class="form-control" step="0.50" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <!-- /box_general-->
+        {% endblock %}

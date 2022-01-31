@@ -1,0 +1,54 @@
+{% extends "aplus-expert-base.html" %} 
+{% load static %} 
+
+{% block content %}
+<!-- Inner Page Main Banner __________________ -->
+<div class="inner-page-banner">
+	<div class="opacity">
+		<div class="container">
+			<h2>{{ title }}</h2>
+		</div>
+		<!-- /.container -->
+	</div>
+	<!-- /.opacity -->
+</div>
+<!-- /.inner-page-banner -->
+
+
+<!-- Page Breadcrum __________________________ -->
+<div class="page-breadcrum">
+	<div class="container">
+		<ul>
+			<li>
+				<a href="/home/">Home</a>
+			</li>
+			<li>-</li>
+			<li>Complete Request</li>
+		</ul>
+	</div>
+	<!-- /.container -->
+</div>
+<!-- /.page-breadcrum -->
+
+
+<!-- Error Page -->
+<div class="error-page">
+	<div class="container">
+		<div class="error-wrapper clear-fix">
+			<img style="max-width: 350px;" src="{% static "images/inner-page/aplus-smile.jpg" %}" alt="" class="float-left wow fadeInLeft">
+			<div class="text float-right wow fadeInRight">
+				<h2>
+					<span class="p-color">Thank You</span>
+				</h2>
+				<p>{{ text }}</p>
+				<a href="/home/" class="tran3s">
+					<i class="fa fa-long-arrow-left" aria-hidden="true"></i> GO BACK HOME</a>
+			</div>
+			<!-- /.text -->
+		</div>
+		<!-- /.error-wrapper -->
+	</div>
+	<!-- /.container -->
+</div>
+<!-- /.error-page -->
+{% endblock %}

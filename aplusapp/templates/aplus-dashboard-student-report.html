@@ -1,0 +1,64 @@
+{% extends "aplus-dashboard-base.html" %} {% load static %} {% block content %}
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <h1>
+            <strong>
+                <center>Your Sessions</center>
+            </strong>
+        </h1>
+        <center>
+            <p>Welcome to an overview of your sessions.
+                <b>Below, you can find the reports for all sessions you have taken so far.</b>
+            </p>
+        </center>
+
+        <div class="box_general padding_bottom">
+            <div class="header_box version_2">
+                <h2>
+                    <i class="fa fa-flag"></i>Sessional Reports</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Hours left from your package: {{ student.sessional_hours }}</h3>
+                    {% if student.sessional_hours <= 1 %}
+                    <h6><div style="color: #005dff;">You have one or fewer sessions left. We recommand renewing your package soon.</div></h6>
+                    {% endif %}
+                </div>
+            </div>
+            {% for report in reports %}
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <form>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Tutor's Name</label>
+                                        <input type="text" name="date" id="id_date" value="{{ report.tutor.user.first_name }} {{ report.tutor.user.last_name }}" class="form-control" required readonly/>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <input type="text" name="date" id="id_date" value="{{ report.date }}" class="form-control" required readonly/>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Number of Hours</label>
+                                        <input type="number" name="hours" id="hours" value="{{ report.number_of_hours }}" min="0" max="24" class="form-control" step="0.25" required readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" name="session_comments" id="id_session_comments" maxlength="5000" class="form-control" style="height:100px;" readonly>{{ report.details }}</textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- /box_general-->
+        {% endblock %}

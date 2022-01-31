@@ -1,0 +1,129 @@
+{% extends "aplus-dashboard-base.html" %} {% load static %} {% block content %}
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <h1>
+            <strong>
+                <center>Session Reports</center>
+            </strong>
+        </h1>
+        <center>
+            <p>Please log your sessions below using the form below.
+                <b>We recommend submitting your reports withn 48 hours after the session. A copy of your report will also be
+                    sent to the student and his/her parents.</b>
+            </p>
+        </center>
+
+        <div class="box_general padding_bottom">
+            <div class="header_box version_2">
+                <h2>
+                    <i class="fa fa-file-text"></i>Session Report</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form method="POST">
+                        {% if ReportMessage == "Success" %}
+                            <div class="form-group"><div style="color: #03ad0b;">Report was submitted successfully. An email copy is on its way!</div></div>
+                        {% endif %}
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Student's Name</label>
+                                        <select name="student_id" id="id_student_id" class="form-control" required>
+                                            {% for student in students %}
+                                            <option value="{{ student.student.aplus_id }}">{{ student.student }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        {% if report_form.student_id.errors %}
+                                        <div style="color: #ed1c24;">The student ID could not be found.</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <input type="date" name="date" id="id_date" value="yyyy-mm-dd" class="form-control" required/>
+                                        {% if report_form.date.errors %}
+                                        <div style="color: #ed1c24;">Date could not be logged in. Please make sure you enter the date in yyyy-mm-dd format.</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Number of Hours</label>
+                                        <input type="number" name="hours" id="hours" min="0" max="24" class="form-control" step="0.25" required>
+                                        {% if report_form.hours.errors %}
+                                        <div style="color: #ed1c24;">Please enter a number between 0 and 24.</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {% if report_form.session_comments.errors %}
+                            <div style="color: #ed1c24;">Please enter a valid comment of no more than 5000 characters.</div>
+                            {% endif %}
+                            <textarea rows="5" name="session_comments" id="id_session_comments" maxlength="5000" class="form-control" style="height:100px;" placeholder="In 2-3 sentences, summarize what you did (e.g. goals achieved) and your goals for next class." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <p style="margin-bottom: 0px;">
+                                <input type="submit" name="submit_report" class="btn_1 medium" value="Submit">
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /box_general-->
+
+        <div class="box_general padding_bottom">
+            <div class="header_box version_2">
+                <h2>
+                    <i class="fa fa-flag"></i>Past Reports and Stats</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <h3>Total Hours Tutored: {{ tutor.hours_tutored }}</h3>
+                </div>
+                <div class="col-md-5">
+                    <h3>Hours Not Compensated: {{ tutor.hours_tutored_this_month }}</h3>
+                </div>
+            </div>
+            {% for report in reports %}
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <form>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Student's Name</label>
+                                        <input type="text" name="date" id="id_date" value="{{ report.student }}" class="form-control" required readonly/>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <input type="text" name="date" id="id_date" value="{{ report.date }}" class="form-control" required readonly/>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Number of Hours</label>
+                                        <input type="number" name="hours" id="hours" value="{{ report.number_of_hours }}" min="0" max="24" class="form-control" step="0.25" required readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" name="session_comments" id="id_session_comments" maxlength="5000" class="form-control" style="height:100px;" readonly>{{ report.details }}</textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- /box_general-->
+        {% endblock %}

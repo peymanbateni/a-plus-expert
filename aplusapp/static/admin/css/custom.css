@@ -1,0 +1,14 @@
+/* YOUR CUSTOM CSS */
+top_padding_10 {
+    padding-top: 10px;
+}
+
+.form_error {
+    color: #0077ff;
+    background : black;
+}
+
+.policy{
+    margin-left : 5em;
+    padding-left:5em;
+}

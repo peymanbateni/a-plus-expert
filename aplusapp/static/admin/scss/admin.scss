@@ -1,0 +1,584 @@
+/*
+Theme Name: Findoctor
+Theme URI: http://www.ansonika.com/findoctor/
+Author: Ansonika
+Author URI: http://themeforest.net/user/Ansonika/
+
+[Table of contents] 
+
+1. SITE STRUCTURE
+- 1.1 Typography
+- 1.2 Buttons
+- 1.3 Structure
+
+2. CONTENT
+- 2.1 Booking
+
+3. COMMON
+- 3.1 Forms
+- 3.2 Pagination
+- 3.3 Misc
+- 3.4 Spacing
+- 3.5 Select
+
+/*============================================================================================*/
+/* 1.  SITE STRUCTURE */
+/*============================================================================================*/
+
+/*Import*/
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,400i,500,500i,600,600i,700,700i,800");
+@import "variables.scss";
+@import "mixins.scss";
+@import "global.scss";
+@import "utilities.scss";
+/*-------- Navigation --------*/
+@import "navbar/navbar_global.scss";
+@import "navbar/navbar_fixed.scss";
+@import "navbar/navbar_static.scss";
+@import "navbar/navbar_toggle.scss";
+@import "navbar/navbar_colors.scss";
+/*-------- Cards and footer --------*/
+@import "cards.scss";
+@import "footer.scss";
+
+/*-------- 1.1 Typography --------*/
+body {
+	background: #f8f8f8;
+	color: $body-text-color!important;
+	font-family: $font-main;
+	@include fontSize(14px);
+}
+.content-wrapper {
+    background: #f8f8f8;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $heading-color!important;
+}
+
+p {
+	margin-bottom: 30px;
+}
+
+hr {
+	margin: 15px 0 30px 0;
+	border-color: $border-color;
+}
+hr.double {
+	margin: 15px 0 30px 0;
+	border-color: $border-color;
+	border-width: 2px;
+}
+strong {
+	font-weight: 500;
+}
+
+/*-------- 1.2 Buttons --------*/
+/*General links color*/
+a {
+	color: $secondary-color;
+	text-decoration: none;
+	@include transition-default (all,0.5s);
+	outline: none;
+	&:hover,
+	&:focus {
+		color: #333;
+		text-decoration: none;
+		outline: none;
+	}
+}
+
+a.btn_1,
+.btn_1 {
+	border: none;
+	color: #fff;
+	background: $secondary-color;
+	cursor: pointer;
+	padding: 10px 15px;
+	display: inline-block;
+	outline: none;
+	@include fontSize(13px);
+	@include transition-default;
+	@include border-radius(25px);
+	line-height:1;
+	font-weight: 500;
+	&.gray {
+		background: $gray-200;
+		color: $gray-600;
+		&.approve:hover {
+			background: $green;
+			color: #fff;
+		}
+		&.delete:hover {
+			background: $red;
+			color: #fff;
+		}
+	}
+	&.medium {
+		padding: 12px 45px;
+		@include fontSize(16px);
+	}
+	&:hover {
+		background: $gray-800;
+		color: #fff;
+	}
+}
+
+/*-------- 1.3 Structure --------*/
+/* Header */
+.bg-default {
+    background-color: $primary-color;
+}
+
+/*============================================================================================*/
+/* 2.  CONTENT */
+/*============================================================================================*/
+/*-------- 2.1 Booking --------*/
+ul.buttons {
+    list-style: none;
+	margin: 0 0 30px 0;
+	padding: 0;
+	position: absolute;
+	top:30px;
+	right: 30px;
+	@include mobile {position: static;}
+	li {
+		display: inline-block;
+		margin-right: 3px;
+	}
+}
+ul.booking_details {
+	list-style: none;
+	margin: 15px 0 25px 0;
+	padding: 0;
+	li {
+		margin-bottom: 5px;
+		strong {
+			width: 150px;
+			display: inline-block;
+			@include mobile {
+				display: block;
+				width: auto;
+			}
+		}
+	}
+}
+/*============================================================================================*/
+/* 3.  COMMON */
+/*============================================================================================*/
+/*-------- 3.1 Forms --------*/
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: none;
+  box-shadow: none;
+}
+.form-group label {
+	font-weight: 500;
+	color:$heading-color;
+}
+.form-control {
+	@include fontSize(14px);
+	padding: .65rem;
+	&.search-top {
+		width: 300px;
+		padding: .45rem;
+	}
+}
+select.form-control:not([size]):not([multiple]) {
+    height: calc(2.68rem + 2px);
+}
+
+/*-------- 3.2 Pagination --------*/
+.page-item.active .page-link {
+	background-color: $primary-color;
+	border-color: $primary-color;
+}
+
+.page-item.disabled .page-link {
+	color: #999;
+	border-color: $border-color-2;
+}
+
+.page-link {
+	color: $secondary-color;
+	border: 1px solid $border-color-2;
+	&:focus,
+	&:hover {
+		color: #fff;
+		text-decoration: none;
+		background-color: $secondary-color;
+		border-color: $secondary-color;
+	}
+}
+
+/*-------- 3.3 Misc --------*/
+.box_general {
+	background-color: #fff;
+	padding: 15px 30px 0 30px;
+	@include border-radius-default;
+	margin-bottom: 30px;
+	color: $body-text-color;
+	@include fontSize(14px);
+	@include box-shadow (0px 0px 15px 0px rgba(0, 0, 0, 0.1));
+	hr {
+		margin-left: -30px;
+		margin-right: -30px;
+	}
+	&.padding_bottom {
+		padding-bottom: 20px;
+	}
+}
+.header_box {
+	padding-bottom: 10px;
+	&.version_2 {
+		border-bottom: 1px solid $border-color;
+		margin: 0 -30px;
+		padding: 0 30px 10px 30px;
+		margin-bottom: 15px;
+		i {
+			margin-right: 10px;
+			color: #ddd;
+		}
+	}
+	h2 {
+		@include fontSize(21px);
+		display: inline-block;
+		margin-top: 5px;
+	}
+}
+.list_general {
+	> ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		> li {
+			margin: 0 -30px 0 -30px;
+			position: relative;
+			padding: 30px 30px 5px 120px;
+			border-top: 1px solid $border-color;
+			&:hover {
+				background-color: $gray-100;
+			}
+			figure {
+				width: 70px;
+				height: 70px;
+				@include border-radius(50%);
+				overflow: hidden;
+				position: absolute;
+				left: 30px;
+				top: 30px;
+				img {
+					width: 70px;
+					height: auto;
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					@include transform (translate(-50%, -50%));
+				}
+			}
+		}
+		h4 {
+			@include fontSize(21px);
+		}
+		span {
+			float:right;
+			font-style:italic;
+			color: $gray-500;
+			@include mobile {float:none; margin-bottom: 5px;}
+		}
+	}
+}
+.rating {
+	margin-right: 10px;
+	color: $gray-400!important;
+	.yellow {
+		color: $yellow;
+	}
+}
+.unread, .read, .pending, .cancel, .approved {
+    background-color: $red;
+    @include border-radius(50px);
+	@include fontSize(12px);
+    color: #fff;
+    font-style: normal;
+    padding: 3px 12px 2px 12px;
+    margin-left: 3px;
+	position: relative;
+	top:-3px;
+	line-height:1;
+}
+.unread, .cancel {
+    background-color: $red;
+}
+.read, .approved {
+    background-color: $green;
+}
+.pending {
+    background-color: $orange;
+}
+
+/* text-based popup styling */
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 80px 25px 25px 25px;
+  width: auto;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.small-dialog-header {
+	font-size: 22px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	display: inline-block;
+	background-color: #f6f6f6;
+	padding: 15px 25px;
+}
+.small-dialog-header h3 {
+	padding: 0;
+	margin: 0;
+	font-size: 21px;
+}
+
+/*-------- 3.4 Spacing --------*/
+.add_bottom_15 {
+	margin-bottom: 15px;
+}
+
+.add_bottom_30 {
+	margin-bottom: 30px;
+}
+
+.add_bottom_45 {
+	margin-bottom: 45px;
+	@include mobile {margin-bottom: 30px;}
+}
+
+.add_bottom_60 {
+	margin-bottom: 60px;
+}
+
+.add_bottom_75 {
+	margin-bottom: 75px;
+}
+
+.add_top_20 {
+	margin-top: 20px;
+}
+
+.add_top_30 {
+	margin-top: 30px;
+}
+
+.add_top_60 {
+	margin-top: 60px;
+}
+
+.more_padding_left {
+	padding-left: 40px;
+}
+
+.nomargin_top {
+	margin-top: 0;
+}
+
+.nopadding {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.nomargin {
+	margin: 0 !important;
+}
+
+.margin_60 {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	@include mobile {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+}
+
+.margin_60_35 {
+	padding-top: 60px;
+	padding-bottom: 35px;
+	@include mobile {
+		padding-top: 30px;
+		padding-bottom: 5px;
+	}
+}
+
+.margin_120 {
+	padding-top: 120px;
+	padding-bottom: 120px;
+	@include tablet {
+		padding-top: 60px;
+		padding-bottom: 35px;
+	}
+}
+
+.margin_120_95 {
+	padding-top: 120px;
+	padding-bottom: 95px;
+	@include tablet {
+		padding-top: 60px;
+		padding-bottom: 35px;
+	}
+	@include mobile {
+		padding-top: 30px;
+		padding-bottom: 5px;
+	}
+}
+
+/*-------- 3.5 Select --------*/
+.filter {
+	float: right;
+	width: 150px;
+	display: inline-block;
+}
+.sbHolder {
+	background-color: #fff;
+	border: 1px solid $border-color-2;
+	height: 32px;
+	position: relative;
+	@include border-radius(3px);
+	min-width: 160px;
+}
+
+.sbHolder:focus .sbSelector {}
+
+.sbSelector {
+	display: block;
+	height: 32px;
+	left: 0;
+	line-height: 32px;
+	outline: none;
+	overflow: hidden;
+	position: absolute;
+	text-indent: 10px;
+	top: 0;
+	width: 100%;
+}
+
+.sbSelector:link,
+.sbSelector:visited,
+.sbSelector:hover {
+	color: #555;
+	outline: none;
+	text-decoration: none;
+	font-weight: 600;
+	@include fontSize(12px);
+}
+
+.sbToggle {
+	position: absolute;
+	display: block;
+	height: 32px;
+	outline: none;
+	right: 0;
+	top: 0;
+	width: 35px;
+	text-align: center;
+	line-height: 32px;
+	&:after {
+		font-family: 'FontAwesome';
+		font-size: 14px;
+		content: "\f0d7";
+		text-align: center;
+		color: #555;
+	}
+}
+
+.sbHolderDisabled {
+	background-color: #ededed;
+	border: solid 1px #ededed;
+}
+
+.sbOptions {
+	background-color: #fff;
+	border: solid 1px #ededed;
+	list-style: none;
+	left: -1px;
+	right: -1px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 40px;
+	z-index: 10;
+	@include fontSize(12px);
+}
+
+.sbOptions li {
+	padding: 0 7px;
+	float: none !important;
+	border-bottom: solid 1px #ededed;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	width: 100%;
+}
+
+.sbOptions li:last-child {
+	border-bottom: none;
+	float: none !important;
+	margin: 0;
+	padding-left: 10px;
+}
+
+.sbOptions li:hover {
+	color: $secondary-color;
+}
+
+.sbOptions a {
+	display: block;
+	outline: none;
+	padding: 7px 0 7px 3px;
+	text-transform: capitalize;
+}
+
+.sbOptions a:link,
+.sbOptions a:visited {
+	color: #555;
+	text-decoration: none;
+}
+
+.sbOptions a:hover,
+.sbOptions a:focus,
+.sbOptions a.sbFocus {
+	color: $secondary-color;
+}
+
+.sbOptions li.last a {
+	border-bottom: none;
+}
+
+.sbOptions .sbDisabled {
+	border-bottom: dotted 1px #fff;
+	color: #999;
+	display: block;
+	padding: 7px 0 7px 3px;
+}
+
+.sbOptions .sbGroup {
+	border-bottom: dotted 1px #fff;
+	color: #555;
+	display: block;
+	font-weight: bold;
+	padding: 7px 0 7px 3px;
+}
+
+.sbOptions .sbSub {
+	padding-left: 17px;
+}

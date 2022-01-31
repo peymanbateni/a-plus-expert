@@ -1,0 +1,157 @@
+{% extends "aplus-dashboard-base.html" %} 
+{% load static %} 
+
+{% block content %}
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <h1><center><strong>PROFILE INFORMATION</strong></h1>
+    <center>
+      <p>This page controls the information that you use to log into your profile and some general details about your profile. <b>Your name and profile picture may be used in correspondence with students and parents when we send them your reports.</b></p>
+    </center>
+    <div class="box_general padding_bottom">
+      <div class="header_box version_2">  
+        <h2><i class="fa fa-user"></i>Personal Information</h2><a data-toggle="tooltip" data-placement="right" title="This is your personal profile with A+ Expert."><i class="fa fa-fw fa-question-circle"></i></a>
+      </div>
+      <form method="post" enctype="multipart/form-data">
+          {% if ADMessage == "Success" %}
+          <div class="form-group"><div style="color: #03ad0b;">Account information updated successfuly</div></div>
+          {% endif %}
+          {% csrf_token %}
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                  <label>First Name</label>
+                {% if account_info_form.first_name.errors %}
+                <div style="color: #ed1c24;">Name cannot be blank or more than 30 characters.</div>
+                {% endif %}
+                <input type="text" name="first_name" maxlength="30" required id="id_first_name" class="form-control" value="{% if user.first_name %}{{ user.first_name }}{% endif %}"/>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Last name</label>
+                {% if account_info_form.last_name.errors %}
+                <div style="color: #ed1c24;">Last name cannot be blank or more than 150 characters.</div>
+                {% endif %}
+                <input type="text" name="last_name" maxlength="150" required id="id_last_name" class="form-control" value="{% if user.last_name %}{{ user.last_name }}{% endif %}"/>
+              </div>
+            </div>
+          </div>
+          <!-- /row-->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Telephone</label><a data-toggle="tooltip" data-placement="right" title="This phone number is linked to your personal account and used for communication purposes with A+ Expert."><i class="fa fa-fw fa-question-circle"></i></a>
+                {% if account_info_form.phone_number.errors %}
+                <div style="color: #ed1c24;">Phone number must be entered in the format: '999999999'. Only numbers up to 16 digits and min of 4 digits allowed.</div>
+                {% endif %}
+                <input type="text" name="phone_number" maxlength="17" id="id_phone_number" class="form-control" value="{% if user.phone_number %}{{ user.phone_number }}{% endif %}"/>
+              </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" name="email" maxlength="100" id="id_email" class="form-control" value="{% if user.email %}{{ user.email }}{% endif %}" readonly/>
+                </div>
+              </div>
+          </div>
+          
+        </div>
+          <!-- /row-->
+          <div class="col-md-4">
+              <div class="form-group">
+                <label>Your photo</label>
+                {% if account_info_form.profile_picture.errors %}
+                <div style="color: #ed1c24;">Please upload an image file 5MB or less in size.</div>
+                {% endif %}
+                <figure>
+                    <img src="{{ user.profile_picture.url }}" alt="{{ user.first_name }} {{ user.last_name }}" style="max-width: 300px; max-height: 90px;">
+                  </figure>
+                <input type="file" name="profile_picture" id="id_profile_picture" accept="image/*"/ style="max-width: 200px;">
+                {% if user.profile_picture.name != "default-profile-pic.jpg" %}
+                <input type="checkbox" name="clear_profile_picture" id="id_clear_profile_picture"> Clear
+                {% endif %}
+              </div>
+            </div>
+            <div class="col-md-4"><p style="margin-top: 0px; margin-bottom: 0px;"><input name="update_info" type="submit" class="btn_1 medium" value="Save"></a></p></div>
+          </form>
+      </div>
+    </div>
+    <!-- /box_general-->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="box_general padding_bottom">
+          <div class="header_box version_2">
+            <h2>
+              <i class="fa fa-lock"></i>Change password</h2>
+          </div>
+          <form method="post">
+              {% if PCMessage == "Success" %}
+              <div class="form-group"><div style="color: #03ad0b;">Password changed successfuly.</div></div>
+              {% endif %}
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="id_old_password">Old password</label>
+                <input type="password" name="old_password" class="form-control" autofocus required id="id_old_password"/>
+                {% if password_change_form.errors.old_password %}
+                <div style="color: #ed1c24;">{{ password_change_form.errors.old_password.as_text|slice:"2:" }}</div>
+                {% endif %}
+              </div>
+              <div class="form-group">
+                  <label for="id_new_password1">New password</label>
+                  <input type="password" name="new_password1" class="form-control" required id="id_new_password1" />
+                  {% if password_change_form.errors.new_password1 %}
+                  <div style="color: #ed1c24;">{{ password_change_form.errors.new_password1.as_text|slice:"2:" }}</div>
+                  {% endif %}
+              </div>
+              <span class="helptext" style="margin-top: 20px;"><ul><li>Your password can&#39;t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can&#39;t be a commonly used password.</li><li>Your password can&#39;t be entirely numeric.</li></ul></span>
+              <div class="form-group">
+                  <label for="id_new_password2">Confirm new password</label>
+                  <input type="password" name="new_password2" class="form-control" required id="id_new_password2"/>
+                  {% if password_change_form.errors.new_password2 %}
+                  <div style="color: #ed1c24;">{{ password_change_form.errors.new_password2.as_text|slice:"2:" }}</div>
+                  {% endif %}
+              </div>
+              <p style="margin-top: 0px; margin-bottom: 0px;"><input name="change_password" class="btn_1 medium" type="submit" value="Change Password"></button></p>
+            </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="box_general padding_bottom">
+          <div class="header_box version_2">
+            <h2>
+              <i class="fa fa-envelope"></i>Change email</h2>
+          </div>
+          <form method="post">
+              {% if ECMessage == "Success" %}
+              <div class="form-group"><div style="color: #03ad0b;">Email changed successfuly.</div></div>
+              {% elif ECMessage %}
+              <div class="form-group"><div style="color: #ed1c24;">{{ ECMessage }}</div></div>
+              {% endif %}
+              {% csrf_token %}
+          <div class="form-group">
+            <label>Old email</label>
+            <input class="form-control" name="old_email" required id="old_email" type="email" value='{{ user.email }}' readonly>
+          </div>
+          <div class="form-group">
+            <label>New email</label>
+            <input class="form-control" name="new_email" required id="new_email" type="email">
+          </div>
+          <div class="form-group">
+            <label>Confirm new email</label>
+            <input class="form-control" name="new_email_conf" required id="new_email_conf" type="email">
+          </div>
+          <p style="margin-top: 0px; margin-bottom: 0px;"><input name="change_email" class="btn_1 medium" type="submit" value="Change Email"></button></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- /row-->
+  </div>
+  <!-- /.container-fluid-->
+</div>
+<!-- /.container-wrapper-->
+{% endblock %}

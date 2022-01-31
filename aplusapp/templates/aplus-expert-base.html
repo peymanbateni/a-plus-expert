@@ -1,0 +1,265 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- For IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- For Resposive Device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta Tags -->
+    <meta name="description" content="With expert tutors and decades of combined experience in in-home tutoring, at A+ Expert we help our students achieve academic excellence through affordable personalized educational plans that build A+ masters from any student regardless of where they start off academically.">
+    <meta name="author" content="A+ Expert - Where Students Become Achievers">
+    <meta name="keywords" content="tutor, tutoring, one-on-one, in-home, personalized, education, vancouver, north shore, west vancouver, north vancouver, downtown vancouver, expert tutoring, A+ Expert">
+
+    <title>{{ page }} | A+ Expert - Where Students Become Achievers</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="56x56" href="{% static "images/fav-icon/icon.png" %}">
+
+    <!-- Main style sheet -->
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <!-- responsive style sheet -->
+    <link rel="stylesheet" type="text/css" href="{% static "css/responsive.css" %}">
+</head>
+
+<body>
+    <div class="main-page-wrapper">
+
+        <!-- Header -->
+        <header class="main-header">
+
+            <div class="top-header">
+                <div class="container">
+                    <div class="left-side float-left">
+                        <ul>
+                            <li>
+                                <span class="icon round-border">
+                                    <i class="ficon flaticon-multimedia"></i>
+                                </span>
+                                <a href="mailto:info@aplus-expert.com" class="tran3s">info@aplus-expert.com</a>
+                            </li>
+                            <li>
+                                <span class="icon round-border">
+                                    <i class="ficon flaticon-technology"></i>
+                                </span>
+                                <a href="tel://16044415070" class="tran3s">+1 (604) 441-5070</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.left-side -->
+                    <div class="right-side float-right">
+                        <ul>
+                            <li>
+                                <a href="https://fb.me/aplusvancouver" class="tran3s round-border icon">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://instagram.com/aplus_expert" class="tran3s round-border icon">
+                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.right-side -->
+                </div>
+            </div>
+            <!-- /.top-header -->
+
+            <!-- Theme Menu -->
+            <div class="container">
+                <div class="main-menu-wrapper clear-fix">
+                    <div class="container">
+                        <div class="logo float-left">
+                            <a href="/home/" style="vertical-align:middle;">
+                                <img src="{% static "images/logo/logo.png" %}" alt="LOGO">
+                            </a>
+                        </div>
+
+                        <!-- Menu -->
+                        <nav class="navbar float-right">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li class="{% if page == 'Home' %}current-page-item{% endif %}">
+                                        <a href="/home/">Home</a>
+                                    </li>
+                                    <li class="{% if page == 'Free Consultation' %}current-page-item{% endif %}">
+                                        <a href="/free-consultation/">Free Consultation</a>
+                                    </li>
+                                    <li class="{% if page == 'About' %}current-page-item{% endif %}">
+                                        <a href="/about/">About</a>
+                                    </li>
+                                    <li class="{% if page == 'Contact' %}current-page-item{% endif %}">
+                                        <a href="/contact/">Contact</a>
+                                    </li>
+                                    {% if user.is_authenticated %}
+                                    <li class="{% if page == 'My Dashboard' %}current-page-item{% endif %}">
+                                        <a href="/dashboard/report/">My Dashboard</a>
+                                    </li>
+                                    {% else %}
+                                    <li class="{% if page == 'Login' %}current-page-item{% endif %}">
+                                        <a href="/login/">Login</a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                            <!-- /.navbar-collapse -->
+                        </nav>
+                    </div>
+                </div>
+                <!-- /.main-menu-wrapper -->
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+
+        <!-- SubsCribe Banner -->
+        <div class="subscribe-banner p-color-bg wow fadeInUp">
+	        <div class="container">
+		        <h3>Subscribe to our news letter</h3>
+		        <p>Receive weekly newsletter with educational materials, new courses, most popular posts, popular books and much more!</p>
+                <form method="POST" action="/complete-request/" class="clear-fix">
+                    {% csrf_token %}
+			        <input name="email" type="email" class="float-left wow fadeInLeft" placeholder="Email address" maxlength="250" required>
+			        <button name="subscribe-to-news-letter" class="float-left tran3s wow fadeInRight">Subcribe</button>
+		        </form>
+	        </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            <div class="top-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 footer-about">
+                            <h4>About A+ Expert</h4>
+                            <p>At A+ Expert, we're proud to be the place where students become achievers. Founded by UBC pre-med
+                                and engineering scholars, we focus on creating personalized tutoring paths for students to
+                                improve their grades and gain a better understanding of academic subjects.</p>
+                            <ul>
+                                <li>
+                                    <a href="https://fb.me/aplusvancouver" class="tran3s round-border icon">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://instagram.com/aplus_expert" class="tran3s round-border icon">
+                                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.footer-about -->
+
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 footer-contact">
+                            <h4>CONTACT US</h4>
+                            <ul>
+                                <li>
+                                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                    <a href="mailto:info@aplus-expert.com" class="tran3s">info@aplus-expert.com</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    <a href="tel://16044415070" class="tran3s">+1 (604) 441-5070</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.footer-contact -->
+
+                        <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 footer-quick-link">
+                            <h4>Quick links</h4>
+                            <ul>
+                                <li>
+                                    <a href="/home/" class="tran3s">
+                                        <i class="fa fa-caret-right" aria-hidden="true"></i>Home</a>
+                                </li>
+                                <li>
+                                    <a href="/free-consultation/" class="tran3s">
+                                        <i class="fa fa-caret-right" aria-hidden="true"></i>Free Consultation</a>
+                                </li>
+                                <li>
+                                    <a href="/about/" class="tran3s">
+                                        <i class="fa fa-caret-right" aria-hidden="true"></i>About</a>
+                                </li>
+                                <li>
+                                    <a href="/contact/" class="tran3s">
+                                        <i class="fa fa-caret-right" aria-hidden="true"></i>Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.footer-quick-link -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /.top-footer -->
+
+            <div class="bottom-footer">
+                <p>Copyright 2018 &copy;
+                    <a href="/home/" class="tran3s" target="_blank">A+ Expert</a>
+                    <span>
+            </div>
+            <!-- /.bottom-footer -->
+        </footer>
+
+        <!-- Scroll Top Button -->
+        <button class="scroll-top tran3s p-color-bg">
+            <i class="fa fa-angle-up" aria-hidden="true"></i>
+        </button>
+        <!-- pre loader  -->
+        <div id="loader-wrapper">
+            <div id="loader"></div>
+        </div>
+
+        <!-- j Query -->
+        <script type="text/javascript" src="{% static "vendor/jquery-2.1.4.js" %}"></script>
+
+        <!-- Bootstrap JS -->
+        <script type="text/javascript" src="{% static "vendor/bootstrap/bootstrap.min.js" %}"></script>
+
+        <!-- Vendor js _________ -->
+        <!-- revolution -->
+        <script src="{% static "vendor/revolution/jquery.themepunch.tools.min.js" %}"></script>
+        <script src="{% static "vendor/revolution/jquery.themepunch.revolution.min.js" %}"></script>
+        <script type="text/javascript" src="{% static "vendor/revolution/revolution.extension.slideanims.min.js" %}"></script>
+        <script type="text/javascript" src="{% static "vendor/revolution/revolution.extension.layeranimation.min.js" %}"></script>
+        <script type="text/javascript" src="{% static "vendor/revolution/revolution.extension.navigation.min.js" %}"></script>
+        <script type="text/javascript" src="{% static "vendor/revolution/revolution.extension.kenburn.min.js" %}"></script>
+        <script type="text/javascript" src="{% static "vendor/revolution/revolution.extension.actions.min.js" %}"></script>
+
+        <!-- Bootstrap Select JS -->
+        <script type="text/javascript" src="{% static "vendor/bootstrap-select/dist/js/bootstrap-select.js" %}"></script>
+        <!-- Time picker -->
+        <script type="text/javascript" src="{% static "vendor/time-picker/jquery.timepicker.min.js" %}"></script>
+        <!-- WOW js -->
+        <script type="text/javascript" src="{% static "vendor/WOW-master/dist/wow.min.js" %}"></script>
+        <!-- owl.carousel -->
+        <script type="text/javascript" src="{% static "vendor/owl-carousel/owl.carousel.min.js" %}"></script>
+        <!-- js count to -->
+        <script type="text/javascript" src="{% static "vendor/jquery.appear.js" %}"></script>
+        <script type="text/javascript" src="{% static "vendor/jquery.countTo.js" %}"></script>
+
+        <!-- Theme js -->
+        <script type="text/javascript" src="{% static "js/theme.js" %}"></script>
+
+    </div>
+    <!-- /.main-page-wrapper -->
+</body>
+
+</html>

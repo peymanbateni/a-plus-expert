@@ -1,0 +1,34 @@
+{% extends "aplus-dashboard-base.html" %} {% load static %} {% block content %}
+<div class="content-wrapper">
+    <div class="container-fluid">
+
+        <div class="box_general padding_bottom">
+            <div class="header_box version_2">
+                <h2>
+                    <i class="fa fa-road"></i>Tutor Overview</h2>
+            </div>
+            <h1 class='text-center' style="margin-bottom: 50px;">A+ Expert Stats in Realtime!</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <table id="pricing-list-container2" style="width:100%;">
+                        <div class="row">
+                            {% for tutor in tutors %}
+                            <div class="col-lg-3 col-md-3">
+                                <figure>
+                                    <img style="border-radius: 20px;" src="{{ tutor.user.profile_picture.url }}" alt="{{ tutor.user.first_name }} {{ tutor.user.last_name }}"
+                                        class="img-fluid">
+                                </figure>
+                            </div>
+                            <div class="col-md-3">
+                                <h3 class="exec-dash">{{ tutor.user.first_name }} {{ tutor.user.last_name}}</h3>
+                                <h5>Total hours: {{ tutor.hours_tutored }}</h5>
+                                <h5>Hours Not Compensated: {{ tutor.hours_tutored_this_month }}</h5>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </table>
+                </div>
+            </div>
+            <!-- /row-->
+        </div>
+        {% endblock %}

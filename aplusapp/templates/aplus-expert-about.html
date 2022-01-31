@@ -1,0 +1,300 @@
+{% extends "aplus-expert-base.html" %} 
+{% load static %} 
+
+{% block content %}
+<!-- Inner Page Main Banner -->
+<div class="inner-page-banner">
+	<div class="opacity">
+		<div class="container">
+			<h2>ABOUT US</h2>
+		</div>
+		<!-- /.container -->
+	</div>
+	<!-- /.opacity -->
+</div>
+<!-- /.inner-page-banner -->
+
+<!-- Page Breadcrum -->
+<div class="page-breadcrum">
+	<div class="container">
+		<ul>
+			<li>
+				<a href="/home/">Home</a>
+			</li>
+			<li>-</li>
+			<li>About</li>
+		</ul>
+	</div>
+	<!-- /.container -->
+</div>
+<!-- /.page-breadcrum -->
+
+<!-- Welcome Section -->
+<div class="welcome-section-two">
+	<div class="container">
+		<div class="section-title wow fadeInUp">
+			<h2 class="p-color">Welcome to A+ Expert</h2>
+			<h5>Where Students Become Achievers</h5>
+			<p>Founded by experience tutors who are top-achieving engineer and pre-med candidates at UBC, we're on a mission to make
+				sure students have the tools and the guidence to achieve their full potential and improve their academic performance.</p>
+		</div>
+		<!-- /.section-title -->
+
+		<div class="row" style="margin-bottom: 60px;">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 wow fadeInUp">
+				<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+				<h3>Experienced Tutors</h3>
+				<p>Our tutors are selected very restrictively and recieve rigorous training to become experts at personalized tutoring.
+					They on average have 5+ years of tutoring experience with excellent academic records.</p>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 wow fadeInUp">
+				<i class="fa fa-tags" aria-hidden="true"></i>
+				<h3>Affordable Prices</h3>
+				<p>Despite our great track record, we believe in affordability as one of our core values and we strive to keep our prices
+					low so any student can benefit from our tutors.</p>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 wow fadeInUp">
+				<i class="fa fa-diamond" aria-hidden="true"></i>
+				<h3>Personalized Education</h3>
+				<p>We create personalized tutoring plans for each of our students, tailored towards their specific needs to assure effective
+					delivery of material with fast-paced results.</p>
+			</div>
+		</div>
+	</div>
+	<!-- /.container -->
+</div>
+<!-- /.welcome-section-two -->
+
+<!-- course Progress -->
+<div class="course-progress">
+	<div class="opacity">
+		<div class="container">
+			<h2>Taught by the
+				<span style="color: #ffff00;">Very Best</span>
+			</h2>
+			<p>Our tutors are high-achieving engineering and science students with a history of educational excellence.</p>
+
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+					<div class="icon">
+						<i class="ficon flaticon-crowdfunding"></i>
+					</div>
+					<p>Years of Experience</p>
+					<div class="number">
+						<span class="timer" data-from="0" data-to="5" data-speed="1500" data-refresh-interval="5">0</span>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+					<div class="icon">
+						<i class="ficon flaticon-teamwork"></i>
+					</div>
+					<p>Hours of Tutoring</p>
+					<div class="number">
+						<span class="timer" data-from="0" data-to="3500" data-speed="1500" data-refresh-interval="5">0</span>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+					<div class="icon">
+						<i class="ficon flaticon-medical"></i>
+					</div>
+					<p>Students Taught</p>
+					<div class="number">
+						<span class="timer" data-from="0" data-to="180" data-speed="1500" data-refresh-interval="5">0</span>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+					<div class="icon">
+						<i class="ficon flaticon-book"></i>
+					</div>
+					<p>Student Satisfaction</p>
+					<div class="number">
+						<span class="timer" data-from="0" data-to="100" data-speed="1500" data-refresh-interval="5">0</span>%</div>
+				</div>
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container -->
+	</div>
+	<!-- /.opacity -->
+</div>
+<!-- /.course-progress -->
+
+<!-- Information Banner -->
+<div class="information-banner wow fadeInUp">
+	<div class="container">
+		<h2 style="margin-bottom: 10px;">Are you looking for a
+			<span class="p-color">Tutor</span>?</h2>
+		<h3>Sign up for a
+			<span class="p-color">free consultation</span> today</h3>
+		<h6>We would be glad to assist you in any way possible.</h6>
+		<a href="/contact/" class="p-color-bg tran3s wow fadeInUp">Free Consultation</a>
+	</div>
+	<!-- /.container -->
+</div>
+<!-- /.information-banner -->
+
+<!-- Testimonial And FAQ Section -->
+<div class="test-faq">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 testimonial wow fadeInLeft">
+				<div class="wrapper">
+					<h3>TESTIMONIALS</h3>
+					<div id="testimonial-carousel" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#testimonial-carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#testimonial-carousel" data-slide-to="1"></li>
+						</ol>
+
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner" role="listbox">
+							<div class="item active">
+								<div class="single-box theme-bg-color">
+									<div class="img round-border">
+										<img src="{% static "images/testimonials/default-profile-pic.jpg" %}" alt="Image">
+									</div>
+									<h6>Soha Heydarian
+										<span>(Grade 11 Student)</span>
+									</h6>
+									<p>I've been tutored by A+ Expert for math, and I've gone up one letter grade to an A+ standing now.
+										I'm glad to say I'm an "A+ Expert" now, and I strongly recommend this service to other students who want to improve
+										their grades.</p>
+								</div>
+								<!-- /.single-box -->
+
+								<div class="single-box theme-bg-color">
+									<div class="img round-border">
+										<img src="{% static "images/testimonials/ali-hedayati.jpg" %}" alt="Image">
+									</div>
+									<h6>Ali Hedayati
+										<span>(Grade 12 Student)</span>
+									</h6>
+									<p>A+ Expert has changed my life. Thanks to Mr. Khorrami, I now understand physics and chemistry like never before.
+										Having tried many tutors before, with A+ Expert I actually acheived the results I was always looking for.</p>
+								</div>
+								<!-- /.single-box -->
+							</div>
+
+							<div class="item">
+								<div class="single-box theme-bg-color">
+									<div class="img round-border">
+										<img src="{% static "images/testimonials/default-profile-pic.jpg" %}" alt="Image">
+									</div>
+									<h6>Bita Sharifi
+										<span>(Mother of 2 Students at A+ Expert)</span>
+									</h6>
+									<p>We're very happy with trusting A+ Expert to help our children gain a better understanding of what they're taught
+										at school. Their tutors are very knowledgeable and up-to-date with the most recent curriculums taught at BC Elementary
+										and Secondary Schools.</p>
+								</div>
+								<!-- /.single-box -->
+
+								<div class="single-box theme-bg-color">
+									<div class="img round-border">
+										<img src="{% static "images/testimonials/default-profile-pic.jpg" %}" alt="Image">
+									</div>
+									<h6>Parham Fathinaz
+										<span>(Grade 11 Student)</span>
+									</h6>
+									<p>I just had my first class and I cannot believe how such a great team
+										of tutors can come at a very afforadable price. They truly care about their students and work even past hours
+										to make sure you understand the subject.</p>
+								</div>
+								<!-- /.single-box -->
+							</div>
+						</div>
+					</div>
+					<!-- /#testimonial-carousel -->
+				</div>
+				<!-- /.wrapper -->
+			</div>
+			<!-- /.testimonial -->
+
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 faq wow fadeInRight">
+				<div class="wrapper">
+					<h3>Frequently Asked Questions</h3>
+					<!-- ________________ Panel _______________ -->
+					<div class="faq_panel">
+						<div class="panel-group theme-accordion" id="accordion">
+							<div class="panel">
+								<div class="panel-heading active-panel">
+									<h6 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+											How do we get started?</a>
+									</h6>
+								</div>
+								<div id="collapse1" class="panel-collapse collapse in">
+									<div class="panel-body">
+										<p>We provide half an hour of expert advise to all our new students all free of charge and with zero commitments.
+											Our goal is to learn more about the students' needs and create a personalized plan to achieve their full potential.
+											Afterwards, we'll lay down a plan of weekly sessions to improve the students' performance across the needed subjects.
+										</p>
+									</div>
+								</div>
+							</div>
+							<!-- /panel 1 -->
+							<div class="panel">
+								<div class="panel-heading">
+									<h6 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+											How do we gaurantee results?</a>
+									</h6>
+								</div>
+								<div id="collapse2" class="panel-collapse collapse">
+									<div class="panel-body">
+										<p>We're all about measurements and we continously work with our students and tutors to make sure we deliver specific
+											tutoring to achieve the desired results. We regularly measure the performance of our students and modify strategies
+											to assure success.</p>
+									</div>
+								</div>
+							</div>
+							<!-- /panel 2 -->
+							<div class="panel">
+								<div class="panel-heading">
+									<h6 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+											What grades can we come to A+ Expert for?</a>
+									</h6>
+								</div>
+								<div id="collapse3" class="panel-collapse collapse">
+									<div class="panel-body">
+										<p>While we work with K-12 students of all stages, we heavily specialize in grade 9-12 students with a focus on preparing
+											students for admission at top ranking universities in Canada, US and Europe.</p>
+									</div>
+								</div>
+							</div>
+							<!-- /panel 3 -->
+
+							<div class="panel">
+								<div class="panel-heading">
+									<h6 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+											How was A+ Expert started?</a>
+									</h6>
+								</div>
+								<div id="collapse5" class="panel-collapse collapse">
+									<div class="panel-body">
+										<p>We're a team of experienced tutors who are currently top-achieving pre-med and engineering students at UBC. We love
+											helping other students achieve their full academic potential, and we're honoured to have been trusted with so
+											many students so far.</p>
+									</div>
+								</div>
+							</div>
+							<!-- /panel 5 -->
+
+						</div>
+						<!-- end #accordion -->
+					</div>
+					<!-- End of .faq_panel -->
+				</div>
+				<!-- /.wrapper -->
+			</div>
+			<!-- /.faq -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container -->
+</div>
+<!-- /.test-faq -->
+{% endblock %}

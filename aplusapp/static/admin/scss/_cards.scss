@@ -1,0 +1,28 @@
+// Styling for custom cards
+.card.dashboard {
+	border: none;
+	h5 {
+	  color:#fff!important;
+	}
+}
+.card-body-icon {
+  position: absolute;
+  z-index: 0;
+  top: 10px;
+  right: 10px;
+  @include fontSize(32px);
+  opacity: 0.3;
+}
+
+// Override breakpoints for card columns to work well with sidebar
+.card-columns {
+  @media (min-width: 576px) {
+    column-count: 1;
+  }
+  @media (min-width: 768px) {
+    column-count: 2;
+  }
+  @media (min-width: 1200px) {
+    column-count: 2;
+  }
+}
